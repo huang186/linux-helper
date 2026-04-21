@@ -1,5 +1,7 @@
 #include<iostream>
+#include<string>
 int main(){
-    std::cout<<"this is a test";
-    return 0;
+    std::cout<<"欢迎进入linux系统中文辅助器\n";
+    std::cout<<"\\";
+    system("cd");
 }
