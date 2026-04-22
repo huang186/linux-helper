@@ -1,6 +1,6 @@
 # linux-helper
 此应用可以帮助你快速上手linux，可以使用中文命令操控Linux。
-##安装方法
+## 安装方法
 1.将文件加添加到目录中（这里以添加到根目录为例）
 ```shell
 git clone https://github.com/huang186/linux-helper.git
