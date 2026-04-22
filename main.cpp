@@ -44,6 +44,10 @@ int main(){
             std::cout<<"请输入新增命令:";
             std::string cmd;
             std::getline(std::cin,cmd);
+            if(cmd_map.find(cmd)!=cmd_map.end()){
+                std::cout<<"命令已存在";
+                continue;
+            }
             file<<cmd;
             file<<" ";
             std::cout<<"请输入命令对应的linux指令:";
@@ -52,7 +56,16 @@ int main(){
             file.close();
         }
         std::string str;
-        size_t space_pos=input.find(' ');
+        int space_pos=-1;
+        for(int i=0;i<input.length();i++){
+            if(input[i]==' '){
+                space_pos=i;
+                break;
+            }
+        }
+        if(space_pos==-1){
+            space_pos=input.length();
+        }
         std::string base_command=input.substr(0, space_pos);
         std::string extra_args=input.substr(space_pos);
         auto it=cmd_map.find(base_command);
