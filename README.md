@@ -9,8 +9,10 @@ git clone https://github.com/huang186/linux-helper.git
 2.运行程序，进入该目录
 ```shell
 cd linux-helper
-./main_x86   #如果你的电脑是x86架构就运行该程序
-./main_arm   #如果你的电脑是arm架构就运行该程序
+chmod +x ./main_x86 #如果你的电脑是x86架构就运行该程序
+./main_x86   
+chmod +x ./main_arm #如果你的电脑是arm架构就运行该程序
+./main_arm
 ```
 ## 如果程序无法运行请克隆项目后进入项目目录使用该程序进行编译
 ```
