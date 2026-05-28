@@ -2,12 +2,13 @@
 #include<string>
 #include<fstream>
 #include<map>
+#include<unistd.h>
+std::string linux_add="\\";
 int main(){
     std::cout<<"欢迎进入linux系统中文辅助器\n";
-    std::cout<<"\\";
-    std::system("cd");
     std::string input;
     std::string temp;
+    std::cout<<"\\";
     std::map<std::string,std::string>cmd_map;
     std::ifstream file("config");
     if(!file.is_open()){
@@ -27,16 +28,22 @@ int main(){
             }
         }
         std::string string_temp1=temp.substr(0,add);
-        std::string string_temp2=temp.substr(add+1,temp.length()-1);
+        std::string string_temp2=temp.substr(add+1);
         cmd_map[string_temp1]=string_temp2;
 
     }
-    std::string add="\\";
     while(1){
         std::getline(std::cin,input);
         if(input=="exit"){
             std::cout<<"感谢使用linux系统中文辅助器\n";
             return 0;
+        }
+        if(input=="help"){
+            std::ifstream file3("config");
+            while(std::getline(file3,temp)){
+                std::cout<<temp<<"\n";
+            }
+            continue;
         }
         if(input=="set"){
             std::ofstream file("config",std::ios::app);
@@ -55,6 +62,26 @@ int main(){
             file<<cmd;
             file.close();
         }
+        /*if(input.substr(0,2)=="cd"){
+            if(input.length()==2){
+                chdir("~");
+            }
+        }
+        if(input=="回主目录"){
+            chdir("~");
+        }
+        if(input.substr(0,12)=="返回上级"){
+            chdir("..");
+        }
+        if(input.substr(0,12)=="切换目录"){
+            chdir(input.substr(13).c_str());
+        }
+        if(input.substr(0,2)=="cd" && input.length()>2){
+            chdir(input.substr(13).c_str());
+        }
+        if(input.substr(0,2)=="cd" && input.length()>2){
+            chdir(input.substr(3).c_str());
+        }*/
         std::string str;
         int space_pos=-1;
         for(int i=0;i<input.length();i++){
@@ -76,7 +103,6 @@ int main(){
         else{
             std::system(input.c_str());
         }
-        std::cout<<"\\";
     }
     return 0;
 }
