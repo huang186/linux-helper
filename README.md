@@ -7,7 +7,7 @@ git clone https://github.com/huang186/linux-helper.git
 ```
 2.运行程序，进入该目录
 ```shell
-cd linux-helper
+cd linux-helper/program
 chmod +x ./lhelp #如果你的电脑是x86架构就运行该程序
 ./lhelp  
 ```
