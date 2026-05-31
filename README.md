@@ -20,9 +20,6 @@ chmod +x ./lhelp #如果你的电脑是x86架构就运行该程序
 显示所有 ls -a
 详细信息 ls -l
 显示路径 pwd
-切换目录 cd
-返回上级 cd ..
-回主目录 cd ~
 创建目录 mkdir
 删除目录 rmdir
 创建文件 touch
